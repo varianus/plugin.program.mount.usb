@@ -72,7 +72,7 @@ def load_drive():
                 
                 device = bytearray(device).replace(b'\x00', b'').decode('utf-8')
                 if not label:
-                    size = int(drive_info.get('IdLabel'))
+                    size = int(drive_info.get('Size'))
                     label = '%s %s'%(convert_size(size), device)
                 if 'mmcblk' not in device: 
                     disk = '/org/freedesktop/UDisks2/block_devices%s'%device[4:]
